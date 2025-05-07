@@ -31,16 +31,17 @@
  * @return string
  */
 function theme_moonchild_get_main_scss_content($theme) {
-    // Example content - use the setting 'preset' from this theme but the actual presets - from Boost theme.
     global $CFG;
 
     $scss = '';
-    $filename = $theme->settings->preset ?? null;
-    if ($filename == 'plain.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/plain.scss');
-    } else {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
-    }
+
+    // Load Moonchild SCSS variables (to override  LMS variables).
+    $scss .= file_get_contents($CFG->dirroot . '/theme/moonchild/scss/variables.scss');
+    // Load theme boost default preset scss.
+    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
+    // Load Moonchild main SCSS.
+    $scss .= file_get_contents($CFG->dirroot . '/theme/moonchild/scss/main.scss');
+
 
     return $scss;
 }

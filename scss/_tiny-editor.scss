@@ -1,0 +1,9 @@
+//
+// Tiny editor custom styles
+// This file contains the styles for the Tiny editor.
+//
+
+.tox-tinymce {
+    border: $border-width solid $input-border-color !important; /* stylelint-disable-line declaration-no-important */
+    border-radius: $border-radius !important; /* stylelint-disable-line declaration-no-important */
+}

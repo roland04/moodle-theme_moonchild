@@ -1,0 +1,27 @@
+//
+// Dropdown component styles
+// This file contains the styles for the Dropdown component.
+//
+
+.dropdown-menu {
+    --#{$prefix}dropdown-item-border-radius: .5rem;
+    --#{$prefix}dropdown-link-hover-color: $body-color;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba($dropdown-link-hover-bg, .1);
+}
+
+// Add dropdown menu items styles for each theme color mantainning default hover colour for contrast.
+@each $color, $value in $theme-colors {
+    .dropdown-item {
+        &:hover,
+        &:focus {
+            &.text-#{$color},
+            a.text-#{$color} {
+                color: $body-color !important; /* stylelint-disable-line declaration-no-important */
+            }
+        }
+    }
+}
