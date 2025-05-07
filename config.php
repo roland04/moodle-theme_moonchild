@@ -48,7 +48,7 @@ $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->usescourseindex = true;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 $THEME->haseditswitch = true;
-$THEME->removedprimarynavitems = [];
+$THEME->removedprimarynavitems = ['home'];
 $THEME->activityheaderconfig = [
     'notitle' => true,
 ];
