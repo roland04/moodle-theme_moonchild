@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+namespace theme_moonchild\output;
+
+use pix_icon_font;
+
 /**
- * English language pack for theme_moonchild
+ * Bootstrap icon subtype.
  *
- * @package    theme_moonchild
- * @category   string
- * @copyright  2025 Mikel Martín <mikel@moodle.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2025 Mikel Martín <mikel@moodle.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package theme_moonchild
+ * @category output
  */
-
-defined('MOODLE_INTERNAL') || die();
-
-$string['cachedef_bootstrap_icon_map'] = 'Mapping of icons for Bootstrap icon system';
-$string['choosereadme'] = 'theme_moonchild is a just a Boost child theme example';
-$string['pluginname'] = 'Moonchild';
+class pix_icon_bootstrap extends pix_icon_font {
+}

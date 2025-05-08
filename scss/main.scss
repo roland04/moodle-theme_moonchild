@@ -1,6 +1,11 @@
 //
 // Moonchild main SCSS file
 //
+
+// Import Bootstrap icons.
+@import 'bootstrapicons/main';
+
+// Import Moonchild component styles.
 @import '_drawer';
 @import '_dropdown';
 @import '_navbar';

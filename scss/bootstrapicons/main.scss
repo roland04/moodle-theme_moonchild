@@ -1,0 +1,16 @@
+$bootstrap-icons-font-hash: "24e3eb84d0bcaf83d77f904c78ac1f47";
+$bootstrap-icons-font-src:  url("[[font:theme_moonchild|bootstrap-icons.woff2]]?#{$bootstrap-icons-font-hash}") format("woff2"),
+    url("[[font:theme_moonchild|bootstrap-icons.woff]]?#{$bootstrap-icons-font-hash}") format("woff");
+
+@import 'bootstrap-icons';
+
+.icon {
+    max-width: map-get($iconsizes, 4);
+    max-height: map-get($iconsizes, 4);
+
+    img&,
+    .drawer-toggles .drawer-toggler .btn & {
+        width: map-get($iconsizes, 3);
+        height: map-get($iconsizes, 3);
+    }
+}

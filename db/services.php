@@ -15,16 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * English language pack for theme_moonchild
+ * External functions and service declaration for theme Moonchild
  *
  * @package    theme_moonchild
- * @category   string
+ * @category   webservice
  * @copyright  2025 Mikel Martín <mikel@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$string['cachedef_bootstrap_icon_map'] = 'Mapping of icons for Bootstrap icon system';
-$string['choosereadme'] = 'theme_moonchild is a just a Boost child theme example';
-$string['pluginname'] = 'Moonchild';
+$functions = [
+    'theme_moonchild_load_bootstrap_icon_system_map' => [
+        'classname' => theme_moonchild\external\bootstrapicons\load_icons_map::class,
+        'description' => 'Load the mapping of moodle pix names to Bootstrap icon names',
+        'type' => 'read',
+        'loginrequired' => false,
+        'ajax' => true,
+    ],
+];

@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'theme_moonchild';
 $plugin->release      = '1.0';
-$plugin->version      = 2025050600;
+$plugin->version      = 2025050800;
 $plugin->requires     = 2025050200.00;
 $plugin->maturity     = MATURITY_STABLE;
