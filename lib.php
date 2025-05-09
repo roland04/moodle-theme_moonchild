@@ -77,3 +77,29 @@ function theme_moonchild_get_precompiled_css($theme) {
     // By default fallback to Boost CSS.
     return file_get_contents($CFG->dirroot . '/theme/boost/style/moodle.css');
 }
+
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
+function theme_moonchild_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    if ($context->contextlevel == CONTEXT_SYSTEM && $filearea === 'loginbackgroundimage') {
+        $theme = theme_config::load('moonchild');
+        // By default, theme files must be cache-able by both browsers and proxies.
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    } else {
+        send_file_not_found();
+        return false;
+    }
+}
