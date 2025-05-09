@@ -1,0 +1,13 @@
+//
+// Login component styles
+// This file contains the styles for the Login component.
+//
+
+.login-wrapper {
+    padding: map-get($spacers, 3);
+    justify-content: center;
+    @include media-breakpoint-up(md) {
+        justify-content: start;
+        padding-left: 10%;
+    }
+}
